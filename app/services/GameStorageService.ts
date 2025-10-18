@@ -1,17 +1,13 @@
-import type Game from "~/models/Game";
+import type PlayerCharacter from "~/models/PlayerCharacter";
 
 export class GameStorageService {
-    private readonly storageKey = "orchid_game_save";
+    private readonly playerCharacterKey = "orchid_pc";
 
-    /**
-     * Saves the game state to localStorage
-     * @param game - The game object to save
-     */
 
-    SaveGame(game: Game): void {
+    SavePlayerCharacter(playerCharacter: PlayerCharacter): void {
         try {
-            const serialized = JSON.stringify(game);
-            localStorage.setItem(this.storageKey, serialized);
+            const serialized = JSON.stringify(playerCharacter);
+            localStorage.setItem(this.playerCharacterKey, serialized);
         } catch (error) {
             console.error("Failed to save game:", error);
             throw new Error("Could not save game to localStorage");
@@ -22,33 +18,18 @@ export class GameStorageService {
      * Loads the game state from localStorage
      * @returns The saved game object, or null if no save exists
      */
-    LoadGame(): Game | null {
+    LoadPlayerCharacter(): PlayerCharacter | null {
         try {
-            const serialized = localStorage.getItem(this.storageKey);
-            
+            const serialized = localStorage.getItem(this.playerCharacterKey);
+
             if (!serialized) {
                 return null;
             }
 
-            return JSON.parse(serialized) as Game;
+            return JSON.parse(serialized) as PlayerCharacter;
         } catch (error) {
             console.error("Failed to load game:", error);
             throw new Error("Could not load game from localStorage");
         }
-    }
-
-    /**
-     * Clears the saved game from localStorage
-     */
-    ClearSave(): void {
-        localStorage.removeItem(this.storageKey);
-    }
-
-    /**
-     * Checks if a saved game exists
-     * @returns True if a save exists, false otherwise
-     */
-    HasSave(): boolean {
-        return localStorage.getItem(this.storageKey) !== null;
     }
 }
