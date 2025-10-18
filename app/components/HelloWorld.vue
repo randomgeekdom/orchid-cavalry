@@ -1,8 +1,5 @@
 <template>
-  <v-container v-if="isGameLoaded" class="fill-height" max-width="900">
-    <router-view/>
-  </v-container>
-  <v-container v-else>
+  <v-container>
     <p>Long ago, a great evil threatened the world. Retired general Mastodon Van Orchid assembled a massive force that
       defeated the threat. As time passed, the need for this independent force diminished. Now, only a few members
       remain. As the new leader, what will you do to restore the the glory of the
@@ -30,11 +27,9 @@
 
 const gameStorageService = inject('gameStorageService');
 
-const isGameLoaded = ref(IsGameLoaded());
-
-if(isGameLoaded.value){
+if (IsGameLoaded()) {
   const router = useRouter();
-  router.push('/world');
+  router.push('/game/world');
 }
 
 const FirstName = ref('');
@@ -47,7 +42,7 @@ function Save() {
   });
 
   const router = useRouter();
-  router.push('/world');
+  router.push('/game/world');
 }
 
 function IsGameLoaded() {

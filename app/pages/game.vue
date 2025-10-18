@@ -3,7 +3,10 @@
 </script>
 
 <template>
-<p>This is the game</p>
+  <div>
+    <p>THIS IS THE GAME LEVEL</p>
+    <NuxtPage />
+  </div>
 </template>
 
 <style scoped lang="sass">
