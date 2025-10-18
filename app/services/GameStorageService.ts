@@ -7,6 +7,7 @@ export class GameStorageService {
      * Saves the game state to localStorage
      * @param game - The game object to save
      */
+
     SaveGame(game: Game): void {
         try {
             const serialized = JSON.stringify(game);
@@ -28,9 +29,8 @@ export class GameStorageService {
             if (!serialized) {
                 return null;
             }
-            
-            const game = JSON.parse(serialized) as Game;
-            return game;
+
+            return JSON.parse(serialized) as Game;
         } catch (error) {
             console.error("Failed to load game:", error);
             throw new Error("Could not load game from localStorage");
