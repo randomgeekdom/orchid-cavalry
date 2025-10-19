@@ -1,5 +1,11 @@
 <script setup lang="ts">
 
+  const isLoading = ref(true);
+
+  inject('world', World);
+
+  isLoading.value = false;
+
 </script>
 
 <template>

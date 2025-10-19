@@ -1,5 +1,11 @@
 ﻿<script setup lang="ts">
+function UploadGame() {
+  // Upload Game
+}
 
+function DownloadGame() {
+  // Download Game
+}
 </script>
 
 <template>
@@ -9,15 +15,20 @@
 
       <v-tabs>
         <v-tab prepend-icon="mdi-earth" to="/game/world">World</v-tab>
-        <v-tab prepend-icon="mdi-account-multiple" to="/game/shared">Units</v-tab>
-        <v-tab prepend-icon="mdi-flag" to="/game/starred">Factions</v-tab>
+        <v-tab prepend-icon="mdi-account-multiple" to="/game/units">Units</v-tab>
+        <v-tab prepend-icon="mdi-flag" to="/game/factions">Factions</v-tab>
       </v-tabs>
 
       <v-spacer/>
+
+      <v-tabs>
+        <v-tab title="Upload Game" prepend-icon="mdi-arrow-collapse-up" @click="UploadGame"/>
+        <v-tab title="Download Game" prepend-icon="mdi-arrow-collapse-down" @click="DownloadGame"/>
+      </v-tabs>
     </v-app-bar>
 
     <v-main>
-      <NuxtPage />
+      <NuxtPage/>
     </v-main>
   </v-layout>
 </template>

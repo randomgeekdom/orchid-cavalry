@@ -1,4 +1,4 @@
-import type PlayerCharacter from "~/models/PlayerCharacter";
+import type PlayerCharacter from "~/models/characters/PlayerCharacter";
 
 export class GameStorageService {
     private readonly playerCharacterKey = "orchid_pc";

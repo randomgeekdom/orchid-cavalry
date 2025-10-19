@@ -1,4 +1,4 @@
-import type Character from "~/models/Character";
+import type Character from "~/models/characters/Character";
 
 export class RankService {
     /**
