@@ -1,11 +1,9 @@
 import type {Guid} from "guid-typescript";
-import type City from "~/models/world/City";
-import type FactionPopulation from "~/models/world/FactionPopulation";
+import type Locale from "~/models/world/Locale";
 
 export default interface Region{
-    id: Guid;
-    name: string;
-    description: string;
-    cities: City[];
-    wildsFactionPopulation: FactionPopulation[];
+    Id: Guid;
+    Name: string;
+    Description: string;
+    Locales: Locale[];
 }

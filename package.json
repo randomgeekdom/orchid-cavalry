@@ -20,7 +20,8 @@
     "nuxt": "^4.1.3",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1",
-    "vuetify": "^3.9.1"
+    "vuetify": "^3.9.1",
+    "wikidata-person-names": "^1.3.0"
   },
   "devDependencies": {
     "@mdi/font": "^7.4.47",

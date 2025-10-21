@@ -38,7 +38,8 @@ const LastName = ref('');
 function Save() {
   gameStorageService.SavePlayerCharacter({
     FirstName: FirstName.value.trim(),
-    LastName: LastName.value.trim()
+    LastName: LastName.value.trim(),
+    Age: 20 * 12
   });
 
   const router = useRouter();

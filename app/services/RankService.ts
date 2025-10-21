@@ -1,4 +1,4 @@
-import type Character from "~/models/characters/Character";
+import type Unit from "~/models/characters/Unit";
 
 export class RankService {
     /**
@@ -6,7 +6,7 @@ export class RankService {
      * @returns A string representing the calculated rank
      * @param character The character to calculate the rank for
      */
-    GetRank(character: Character): string {
+    GetRank(character: Unit): string {
         const rankValue = 2 * character.SuccessCount + character.FailureCount;
 
         if (rankValue <= 0) {

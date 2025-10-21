@@ -1,10 +1,10 @@
-import type PlayerCharacter from "~/models/characters/PlayerCharacter";
+import type Leader from "~/models/characters/Leader";
 
 export class GameStorageService {
     private readonly playerCharacterKey = "orchid_pc";
 
 
-    SavePlayerCharacter(playerCharacter: PlayerCharacter): void {
+    SavePlayerCharacter(playerCharacter: Leader): void {
         try {
             const serialized = JSON.stringify(playerCharacter);
             localStorage.setItem(this.playerCharacterKey, serialized);
@@ -18,7 +18,7 @@ export class GameStorageService {
      * Loads the game state from localStorage
      * @returns The saved game object, or null if no save exists
      */
-    LoadPlayerCharacter(): PlayerCharacter | null {
+    LoadPlayerCharacter(): Leader | null {
         try {
             const serialized = localStorage.getItem(this.playerCharacterKey);
 
@@ -26,7 +26,7 @@ export class GameStorageService {
                 return null;
             }
 
-            return JSON.parse(serialized) as PlayerCharacter;
+            return JSON.parse(serialized) as Leader;
         } catch (error) {
             console.error("Failed to load game:", error);
             throw new Error("Could not load game from localStorage");
