@@ -5,6 +5,7 @@ import type Leader from "~/models/characters/Leader";
 export default interface Faction {
     Id: Guid;
     Name: string;
-    Type: FactionType;
+    PrimaryType: FactionType;
+    SecondaryType?: FactionType;
     Leader: Leader;
 }
