@@ -1,7 +1,9 @@
 import type Region from "~/models/world/Region";
 import {Guid} from "guid-typescript";
 import type Faction from "~/models/factions/Faction";
-import {MALE, FEMALE, FAMILY} from 'wikidata-person-names';
+import {FAMILY, FEMALE, MALE} from 'wikidata-person-names';
+import {FactionType} from "~/models/factions/FactionType";
+import type Leader from "~/models/characters/Leader";
 
 export default class GameStarterService {
 
@@ -103,14 +105,134 @@ export default class GameStarterService {
         ];
     }
 
-    GenerateStartingFactions(): Faction[]{
-        // TODO: Implement faction generation -- left off here
-        // There should be at least 6, one for each faction type (probably 2 of each)
-        // Each faction should have a leader
-        // Each faction should have a name
-        // Each faction should have a type
-        // Each faction should have a secondary type
-        // Each faction should have a description
-        return[];
+    private GetRandomLeader(): Leader {
+        return {
+            Id: Guid.create(),
+            FirstName: this.GetRandomFirstName(),
+            LastName: this.GetRandomLastName(),
+            AgeInMonths: (Math.floor(Math.random() * 60) + 20) * 12
+        };
+    }
+
+    GenerateStartingFactions(): Faction[] {
+        return [
+            // Religious Factions - 4
+            {
+                Id: Guid.create(),
+                Name: "The Clay Order",
+                PrimaryType: FactionType.Religious,
+                Description: "The Order of Clay is a religious faction that worships the Earth.",
+                LeaderTitle: "High Paladin",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Ritualists",
+                PrimaryType: FactionType.Religious,
+                SecondaryType: FactionType.Military,
+                Description: "The Ritualists are a militaristic religious faction that worships the gods.",
+                LeaderTitle: "Holy Knight",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Spider Coven",
+                PrimaryType: FactionType.Religious,
+                SecondaryType: FactionType.Political,
+                Description: "The Spider Coven believes in the power of the magicks and uses it to control the people.",
+                LeaderTitle: "Sorcerex",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Temple of Sacrifice",
+                PrimaryType: FactionType.Religious,
+                Description: "The Temple of Sacrifice is a faction that believes in self-sacrifice as a means of devotion to the gods.",
+                LeaderTitle: "Axe Lord",
+                Leader: this.GetRandomLeader()
+            },
+            // Political Factions - 2
+            {
+                Id: Guid.create(),
+                Name: "The Sapphire Ring",
+                PrimaryType: FactionType.Political,
+                SecondaryType: FactionType.Economic,
+                Description: "A political group that attempts to control the world's economy.",
+                LeaderTitle: "Master",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Holy Party",
+                PrimaryType: FactionType.Political,
+                SecondaryType: FactionType.Religious,
+                Description: "A political group that uses faith as a means for control.",
+                LeaderTitle: "Sceptre",
+                Leader: this.GetRandomLeader()
+            },
+            // Military Factions - 5
+            {
+                Id: Guid.create(),
+                Name: "The Pirates of Effigy",
+                PrimaryType: FactionType.Military,
+                Description: "A militaristic faction that seeks to conquer the world.",
+                LeaderTitle: "Fleet Admiral",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Crimson Hoard",
+                PrimaryType: FactionType.Military,
+                SecondaryType: FactionType.Economic,
+                Description: "An army that seeks wealth above all else.",
+                LeaderTitle: "Red General",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Ruby Eye",
+                PrimaryType: FactionType.Military,
+                Description: "An army that believes in freedom for all to learn and live.",
+                LeaderTitle: "Poet General",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Canopy",
+                PrimaryType: FactionType.Military,
+                SecondaryType: FactionType.Religious,
+                Description: "An army with the backing of the gods.",
+                LeaderTitle: "Commander",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Pax League",
+                PrimaryType: FactionType.Military,
+                SecondaryType: FactionType.Religious,
+                Description: "A military faction that fights for peace by control.  Worships Pax, the god of Peace.",
+                LeaderTitle: "High Defender",
+                Leader: this.GetRandomLeader()
+            },
+            // Economic Factions - 2
+            {
+                Id: Guid.create(),
+                Name: "Rufus Company",
+                PrimaryType: FactionType.Economic,
+                SecondaryType: FactionType.Military,
+                Description: "A mercenary group that will take on any task for the right amount of money.",
+                LeaderTitle: "Sergeant",
+                Leader: this.GetRandomLeader()
+            },
+            {
+                Id: Guid.create(),
+                Name: "The Raven Institution",
+                PrimaryType: FactionType.Economic,
+                SecondaryType: FactionType.Political,
+                Description: "A money-grubbing organization with political aptitude.",
+                LeaderTitle: "Socialite",
+                Leader: this.GetRandomLeader()
+            },
+        ];
     }
 }

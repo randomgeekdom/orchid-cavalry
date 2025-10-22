@@ -26,6 +26,7 @@
 <script setup>
 
 const gameStorageService = inject('gameStorageService');
+const gameStarterService = inject('gameStarterService');
 
 if (IsGameLoaded()) {
   const router = useRouter();
@@ -36,6 +37,13 @@ const FirstName = ref('');
 const LastName = ref('');
 
 function Save() {
+
+  const factions = gameStarterService.GenerateStartingFactions();
+  const regions = gameStarterService.GenerateStartingRegions(factions);
+
+  gameStorageService.SaveFactions(factions);
+  gameStorageService.SaveRegions(regions);
+
   gameStorageService.SavePlayerCharacter({
     FirstName: FirstName.value.trim(),
     LastName: LastName.value.trim(),
