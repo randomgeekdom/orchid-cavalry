@@ -1,13 +1,9 @@
 <script setup lang="ts">
 
-  const isLoading = ref(true);
-
-  isLoading.value = false;
-
 </script>
 
 <template>
-  <p>THIS IS THE WORLD LEVEL</p>
+  <div>Units View</div>
 </template>
 
 <style scoped lang="sass">

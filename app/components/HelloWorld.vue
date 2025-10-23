@@ -25,6 +25,8 @@
 
 <script setup>
 
+import {Guid} from "guid-typescript";
+
 const gameStorageService = inject('gameStorageService');
 const gameStarterService = inject('gameStarterService');
 
@@ -45,9 +47,10 @@ function Save() {
   gameStorageService.SaveRegions(regions);
 
   gameStorageService.SavePlayerCharacter({
+    Id: Guid.create(),
     FirstName: FirstName.value.trim(),
     LastName: LastName.value.trim(),
-    Age: 20 * 12
+    AgeInMonths: 20 * 12
   });
 
   const router = useRouter();

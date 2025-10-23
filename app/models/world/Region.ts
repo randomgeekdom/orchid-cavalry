@@ -1,9 +1,9 @@
 import type {Guid} from "guid-typescript";
-import type Locale from "~/models/world/Locale";
+import type City from "~/models/world/City";
 
 export default interface Region{
     Id: Guid;
     Name: string;
     Description: string;
-    Locales: Locale[];
+    Cities: City[];
 }

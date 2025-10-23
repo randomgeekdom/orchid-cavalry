@@ -21,10 +21,8 @@ function DownloadGame() {
 
       <v-spacer/>
 
-      <v-tabs>
-        <v-tab title="Upload Game" prepend-icon="mdi-arrow-collapse-up" @click="UploadGame"/>
-        <v-tab title="Download Game" prepend-icon="mdi-arrow-collapse-down" @click="DownloadGame"/>
-      </v-tabs>
+      <v-btn title="Upload Game" prepend-icon="mdi-arrow-collapse-up" @click="UploadGame"/>
+      <v-btn title="Download Game" prepend-icon="mdi-arrow-collapse-down" @click="DownloadGame"/>
     </v-app-bar>
 
     <v-main>

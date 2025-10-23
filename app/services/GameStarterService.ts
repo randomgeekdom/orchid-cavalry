@@ -21,7 +21,7 @@ export default class GameStarterService {
         return names[Math.floor(Math.random() * names.length)] ?? "Johnson";
     }
 
-    private GetLocale(factions: Faction[], name: string) {
+    private GetCity(factions: Faction[], name: string) {
         return {
             Id: Guid.create(),
             Name: name,
@@ -43,63 +43,63 @@ export default class GameStarterService {
                 Id: Guid.create(),
                 Name: "Azure Mountains",
                 Description: "A range of mountains in the north of the world.  The climate is cold with snow in the winter and ice in the summer.",
-                Locales: [
-                    this.GetLocale(factions, "Azure Peak"),
-                    this.GetLocale(factions, "Basar"),
-                    this.GetLocale(factions, "Carleton"),
-                    this.GetLocale(factions, "Centralia"),
+                Cities: [
+                    this.GetCity(factions, "Azure Peak"),
+                    this.GetCity(factions, "Carleton"),
+                    this.GetCity(factions, "Centralia"),
+                    this.GetCity(factions, "Kasar"),
                 ]
             },
             {
                 Id: Guid.create(),
                 Name: "Bluestone Valley",
                 Description: "A valley at the base of the Azure Mountains.  The climate is temperate with a mix of forests and grasslands.",
-                Locales: [
-                    this.GetLocale(factions, "Angel's Pass"),
-                    this.GetLocale(factions, "Bluestone"),
-                    this.GetLocale(factions, "Coates"),
-                    this.GetLocale(factions, "Chevington"),
-                    this.GetLocale(factions, "Drakaina"),
-                    this.GetLocale(factions, "Gypsum"),
-                    this.GetLocale(factions, "Luna"),
-                    this.GetLocale(factions, "Umberkin"),
+                Cities: [
+                    this.GetCity(factions, "Angel's Pass"),
+                    this.GetCity(factions, "Bluestone"),
+                    this.GetCity(factions, "Coates"),
+                    this.GetCity(factions, "Chevington"),
+                    this.GetCity(factions, "Drakaina"),
+                    this.GetCity(factions, "Gypsum"),
+                    this.GetCity(factions, "Luna"),
+                    this.GetCity(factions, "Umberkin"),
                 ]
             },
             {
                 Id: Guid.create(),
                 Name: "Phantasm Bay",
                 Description: "A bay in the east of the world.  It is home to a large number of islands and is known for its rich fishing.",
-                Locales: [
-                    this.GetLocale(factions, "Psycharium Island"),
-                    this.GetLocale(factions, "Neapolis"),
+                Cities: [
+                    this.GetCity(factions, "Gatta"),
+                    this.GetCity(factions, "Neapolis"),
                 ]
             },
             {
                 Id: Guid.create(),
                 Name: "Banishing Plains",
                 Description: "A large grassland in the west of the world.  The climate is hot and dry with little rainfall.",
-                Locales: [
-                    this.GetLocale(factions, "Blackstone"),
-                    this.GetLocale(factions, "Calvus"),
-                    this.GetLocale(factions, "Castleton"),
-                    this.GetLocale(factions, "Capazzo"),
-                    this.GetLocale(factions, "Claudo"),
-                    this.GetLocale(factions, "Gaea Vista"),
-                    this.GetLocale(factions, "Gesta"),
-                    this.GetLocale(factions, "Hartsfield"),
-                    this.GetLocale(factions, "Kilgore"),
-                    this.GetLocale(factions, "Verlin"),
+                Cities: [
+                    this.GetCity(factions, "Blackstone"),
+                    this.GetCity(factions, "Calvus"),
+                    this.GetCity(factions, "Castleton"),
+                    this.GetCity(factions, "Capazzo"),
+                    this.GetCity(factions, "Claudo"),
+                    this.GetCity(factions, "Gaea Vista"),
+                    this.GetCity(factions, "Gesta"),
+                    this.GetCity(factions, "Hartsfield"),
+                    this.GetCity(factions, "Kilgore"),
+                    this.GetCity(factions, "Verlin"),
                 ]
             },
             {
                 Id: Guid.create(),
                 Name: "Gathering Forest",
                 Description: "A large forest in the east of the world.",
-                Locales: [
-                    this.GetLocale(factions, "Ascension"),
-                    this.GetLocale(factions, "Bassur"),
-                    this.GetLocale(factions, "Slaughterville"),
-                    this.GetLocale(factions, "Waking Wood"),
+                Cities: [
+                    this.GetCity(factions, "Ascension"),
+                    this.GetCity(factions, "Bassur"),
+                    this.GetCity(factions, "Slaughterville"),
+                    this.GetCity(factions, "Waking Wood"),
                 ]
             },
         ];
