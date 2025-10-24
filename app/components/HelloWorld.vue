@@ -47,7 +47,7 @@ function Save() {
   gameStorageService.SaveRegions(regions);
 
   gameStorageService.SavePlayerCharacter({
-    Id: Guid.create(),
+    Id: Guid.create().toString(),
     FirstName: FirstName.value.trim(),
     LastName: LastName.value.trim(),
     AgeInMonths: 20 * 12

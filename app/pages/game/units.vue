@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>Units View</div>
+<div>test</div>
 </template>
 
 <style scoped lang="sass">

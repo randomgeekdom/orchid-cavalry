@@ -1,7 +1,5 @@
-import type {Guid} from "guid-typescript";
-
 export default interface Leader {
-    Id: Guid;
+    Id: string;
     FirstName: string;
     LastName: string;
     AgeInMonths: number;

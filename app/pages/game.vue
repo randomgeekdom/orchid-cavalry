@@ -4,7 +4,7 @@ const NextButtonText = ref('Next Month');
 const IsLoading = ref(false);
 
 
-function Next(){
+function Next() {
   IsLoading.value = true;
 
   setTimeout(() => {
@@ -24,7 +24,7 @@ function DownloadGame() {
 
 <template>
   <v-layout>
-    <v-app-bar >
+    <v-app-bar>
       <v-app-bar-title>Orchid Cavalry</v-app-bar-title>
 
       <v-tabs :disabled="IsLoading">
@@ -39,7 +39,7 @@ function DownloadGame() {
       <v-btn title="Download Game" prepend-icon="mdi-arrow-collapse-down" :disabled="IsLoading" @click="DownloadGame"/>
     </v-app-bar>
 
-    <v-main  class="ma-2">
+    <v-main class="ma-2">
       <v-btn color="secondary" :disabled="IsLoading" @click="Next">
         <v-icon icon="mdi-clock"/>
         {{ NextButtonText }}

@@ -1,11 +1,10 @@
-import type {Guid} from "guid-typescript";
 import type Leader from "~/models/characters/Leader";
 
 export default interface City {
-    Id: Guid;
+    Id: string;
     Name: string;
     Leader: Leader;
-    RulingFactionId?: Guid;
+    RulingFactionId?: string;
     Population: number;
 }
 
