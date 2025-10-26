@@ -1,0 +1,57 @@
+Add skills to unit.
+
+Unit recruitment is passive, based on reputation
+
+Units are assigned to cities
+
+Add aging, each turn is a month.  Leaders can die.
+
+Redo ranks - Not military necessarily.  We'll see.  Maybe ranks for each skill.
+
+Add Reputation to Faction and City
+
+Add Loyalty to unit
+
+Add City Leader title
+
+Add approaches and skills to units
+
+Each Turn
+    Increase Orchid Leader's Age
+    Increase all Faction leaders' ages
+    Increase all city leaders' ages
+    Check if Orchid leader has died of natural causes, replace with unit, if no units, create new leader
+    Check if Faction leader has died of natural causes,  create new leader
+    Check if city leader has died of natural causes, create new leader
+    Recruit Units
+        Random # from 1 to 100 (x3)
+            If # > Number of units, recruit unit
+    Event Generator and Resolver
+
+Skills
+    Stick w/Terra Machina skill set but only a subset per unit
+
+Approaches: Compassionate, Logical, Swift, Brutal, Bombastic, Underhanded, Righteous
+
+Each event will have associated approaches.  The approach will correspond to a skill check for that event to resolve.
+
+Convert AgeInMonths to dates.  Start game year at 430.
+
+Add RegionType/Biome and Climate to Region
+
+Add reputation to Faction and City
+
+Add loyalty to Unit
+
+Fails in events reduce Orchid reputation and unit loyalty
+
+Event: Avalanche
+    Snowy, Mountains
+    Swift: Agility check to save people
+    Compassionate: Diplomacy check to console people
+
+Connect to API to save instead of localStorage
+
+Unit Equipment/Accessories/rewards/titles
+
+Event: A killer on the loose

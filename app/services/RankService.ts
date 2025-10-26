@@ -12,23 +12,25 @@ export class RankService {
         if (rankValue <= 0) {
             return "Recruit";
         } else if (rankValue < 10) {
-            return "Private";
+            return "Deputy";
         } else if (rankValue < 20) {
-            return "Corporal";
+            return "Specialist";
         } else if (rankValue < 30) {
-            return "Sergeant";
+            return "Agent";
         } else if (rankValue < 40) {
-            return "Lieutenant";
+            return "Special Agent";
         } else if (rankValue < 50) {
-            return "Commander";
+            return "Sergeant";
         } else if (rankValue < 60) {
-            return "Captain";
+            return "Lieutenant";
         } else if (rankValue < 70) {
-            return "Major";
+            return "Captain";
         } else if (rankValue < 80) {
-            return "Colonel";
+            return "Commander";
+        } else if (rankValue < 90) {
+            return "Major";
         } else {
-            return "General";
+            return "Marshal";
         }
     }
 }

@@ -5,4 +5,5 @@ export default interface Unit {
     FailureCount: number;
     SuccessCount: number;
     Loyalty: number;
+    AgeInMonths: number;
 }
