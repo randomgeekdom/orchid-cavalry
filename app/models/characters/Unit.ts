@@ -1,3 +1,5 @@
+import type UnitSkill from "~/models/characters/UnitSkill";
+
 export default interface Unit {
     Id: string;
     FirstName: string;
@@ -6,4 +8,5 @@ export default interface Unit {
     SuccessCount: number;
     Loyalty: number;
     AgeInMonths: number;
+    Skills: UnitSkill[];
 }
